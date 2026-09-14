@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ExternalLink, Sparkles } from 'lucide-react';
-import './Projects.css';
+import './projects.css';
 
 const categories = ['All', 'SaaS', 'HR & Payroll', 'ERP', 'Product Safety'];
 
