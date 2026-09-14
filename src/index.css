@@ -1,0 +1,19 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #07111F;
+  --color-primary: #0EA5E9;
+  --color-secondary: #22D3EE;
+  --color-accent: #38BDF8;
+  --color-card: #0F1B2D;
+}
+
+body {
+  /* var(--color-bg) */
+  background-color: #161f2d;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}

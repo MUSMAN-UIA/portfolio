@@ -1,0 +1,646 @@
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  background-color: rgba(7, 17, 31, 0.75);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  z-index: 1000;
+
+  border-bottom: 1px solid rgba(14, 165, 233, 0.15);
+
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.1);
+
+  transition:
+    background-color 0.4s ease,
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1.1rem 2rem;
+
+  position: relative;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+  position: relative;
+
+  font-size: 1.35rem;
+  font-weight: 700;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  letter-spacing: -0.02em;
+
+  display: inline-block;
+
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    text-shadow 0.35s ease;
+}
+
+.navbar-logo::before {
+  content: '';
+
+  position: absolute;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background-color: var(--color-primary);
+
+  left: -10px;
+  top: 50%;
+
+  transform: translateY(-50%) scale(0);
+
+  transition: transform 0.35s ease;
+}
+
+.navbar-logo:hover {
+  transform: translateY(-2px);
+
+  text-shadow:
+    0 0 18px rgba(14, 165, 233, 0.25);
+}
+
+.navbar-logo:hover::before {
+  transform: translateY(-50%) scale(1);
+}
+
+.navbar-logo span {
+  color: var(--color-primary);
+
+  transition:
+    color 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.navbar-logo:hover span {
+  color: var(--color-secondary);
+
+  text-shadow:
+    0 0 15px rgba(14, 165, 233, 0.35);
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+
+  gap: 2.25rem;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  position: relative;
+}
+
+.navbar-links a {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  color: #d1d5db;
+
+  text-decoration: none;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  padding: 0.45rem 0;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* Link Hover Movement */
+
+.navbar-links a:hover {
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+
+/* Animated Underline */
+
+.navbar-links a::after {
+  content: '';
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -3px;
+
+  width: 0;
+  height: 2px;
+
+  background-color: var(--color-secondary);
+
+  border-radius: 10px;
+
+  transform: translateX(-50%);
+
+  transition:
+    width 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+
+  box-shadow:
+    0 0 8px rgba(14, 165, 233, 0.45);
+}
+
+
+
+
+.navbar-links a:hover::before {
+  opacity: 1;
+
+  transform:
+    translateX(-50%)
+    scale(1);
+}
+
+
+/* =========================================================
+   ACTION AREA
+========================================================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 1rem;
+}
+
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+
+.navbar-cta {
+  position: relative;
+
+  overflow: hidden;
+
+  background-color: var(--color-primary);
+
+  color: #ffffff;
+
+  border: none;
+
+  padding: 0.65rem 1.5rem;
+
+  border-radius: 0.5rem;
+
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.35s ease,
+    opacity 0.3s ease;
+}
+
+
+/* Button Shine */
+
+.navbar-cta::before {
+  content: '';
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 70%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.22),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+}
+
+.navbar-cta:hover::before {
+  left: 140%;
+}
+
+
+/* Button Hover */
+
+.navbar-cta:hover {
+  transform:
+    translateY(-3px)
+    scale(1.03);
+
+  box-shadow:
+    0 8px 25px rgba(14, 165, 233, 0.3);
+
+  opacity: 0.97;
+}
+
+
+/* Button Click */
+
+.navbar-cta:active {
+  transform:
+    translateY(-1px)
+    scale(0.98);
+}
+
+
+/* =========================================================
+   MOBILE TOGGLE
+========================================================= */
+
+.navbar-toggle {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  background: transparent;
+
+  border: 1px solid transparent;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  border-radius: 0.5rem;
+
+  transition:
+    transform 0.35s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.navbar-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+
+  border-color:
+    rgba(14, 165, 233, 0.2);
+
+  transform: scale(1.05);
+}
+
+.navbar-toggle.is-open {
+  transform: rotate(90deg);
+}
+
+.icon-wrapper {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   MOBILE CTA
+========================================================= */
+
+.mobile-cta-wrapper {
+  display: none;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .navbar-links {
+    gap: 1.4rem;
+  }
+
+  .navbar-links a {
+    font-size: 0.9rem;
+  }
+
+  .navbar-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+@media (max-width: 868px) {
+
+  .navbar-container {
+    padding: 0.95rem 1.25rem;
+  }
+
+
+  /* Hide Desktop CTA */
+
+  .desktop-cta {
+    display: none;
+  }
+
+
+  /* Show Toggle */
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+
+  /* Mobile Menu */
+
+  .navbar-links {
+    position: fixed;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    height: calc(100vh - 100%);
+
+    background-color: rgba(7, 17, 31, 0.96);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+    padding:
+      2.5rem
+      1.5rem;
+
+    gap: 1.5rem;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform:
+      translateY(-20px)
+      scale(0.98);
+
+    transition:
+      opacity 0.4s ease,
+      visibility 0.4s ease,
+      transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+
+    border-bottom:
+      1px solid rgba(14, 165, 233, 0.15);
+
+    overflow-y: auto;
+  }
+
+
+  /* Active Menu */
+
+  .navbar-links.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
+
+  /* Mobile Items */
+
+  .navbar-links li {
+    width: auto;
+
+    opacity: 0;
+
+    transform:
+      translateY(-15px);
+
+    transition:
+      opacity 0.35s ease,
+      transform 0.35s ease;
+  }
+
+
+  .navbar-links.active li {
+    opacity: 1;
+
+    transform: translateY(0);
+
+    transition-delay:
+      calc(var(--item-index) * 0.06s);
+  }
+
+
+  .navbar-links a {
+    font-size: 1.1rem;
+
+    padding: 0.55rem 1rem;
+  }
+
+
+  /* Mobile CTA */
+
+  .mobile-cta-wrapper {
+    display: block;
+
+    width: 100%;
+
+    max-width: 320px;
+
+    margin-top: 0.75rem;
+  }
+
+  .mobile-cta-wrapper .navbar-cta {
+    width: 100%;
+
+    padding: 0.9rem 1rem;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .navbar-container {
+    padding:
+      0.85rem
+      1rem;
+  }
+
+  .navbar-logo {
+    font-size: 1.15rem;
+  }
+
+  .navbar-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-links {
+    padding:
+      2rem
+      1rem;
+  }
+
+  .navbar-links a {
+    font-size: 1rem;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .navbar-logo {
+    font-size: 1.05rem;
+  }
+
+  .navbar-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar,
+  .navbar *,
+  .navbar *::before,
+  .navbar *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =========================================================
+   ACTIVE NAVIGATION LINK
+========================================================= */
+
+.navbar-links li.active a {
+  color: #ffffff;
+}
+
+
+/* Active underline */
+
+.navbar-links li.active a::after {
+  width: 100%;
+
+  background-color: var(--color-secondary);
+
+  box-shadow:
+    0 0 8px rgba(14, 165, 233, 0.45);
+}
+
+
+/* Active glowing dot */
+
+/* .navbar-links li.active a::before {
+  opacity: 1;
+
+  transform:
+    translateX(-50%)
+    scale(1);
+
+  background-color: var(--color-primary);
+
+  box-shadow:
+    0 0 8px rgba(14, 165, 233, 0.5);
+} */
+
+
+/* Active link subtle glow */
+
+.navbar-links li.active a span {
+  text-shadow:
+    0 0 12px rgba(14, 165, 233, 0.18);
+}
+
+
+/* Active + hover */
+
+.navbar-links li.active a:hover {
+  transform: translateY(-2px);
+}

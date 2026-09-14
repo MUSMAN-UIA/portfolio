@@ -1,0 +1,365 @@
+/* ==========================================================================
+   SERVICES SECTION
+   ========================================================================== */
+
+.services {
+  position: relative;
+
+  padding: 6rem 5rem;
+
+  overflow: hidden;
+}
+
+
+.services-container {
+  position: relative;
+
+  z-index: 1;
+
+  max-width: 1250px;
+
+  margin: 0 auto;
+}
+
+
+/* ==========================================================================
+   BACKGROUND
+   ========================================================================== */
+
+.services-bg-glow {
+  position: absolute;
+
+  top: 20%;
+  right: -10%;
+
+  width: 500px;
+  height: 500px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(14, 165, 233, 0.08) 0%,
+      transparent 70%
+    );
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+
+.services-header {
+  margin-bottom: 3.5rem;
+
+  text-align: left;
+}
+
+
+.services-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  color: var(--color-secondary);
+
+  font-size: 0.85rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  margin-bottom: 0.35rem;
+
+  transition:
+    letter-spacing 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.services-label .label-icon {
+  color: var(--color-accent);
+}
+
+
+.services-label:hover {
+  letter-spacing: 0.2em;
+
+  transform: translateX(3px);
+}
+
+
+
+
+
+.services-sub {
+  color: #9ca3af;
+
+  font-size: 0.95rem;
+
+  margin-top: 0.75rem;
+
+  line-height: 1.65;
+
+  max-width: 36rem;
+}
+
+
+/* ==========================================================================
+   SERVICES GRID
+   ========================================================================== */
+
+.services-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 1.5rem;
+}
+
+
+/* ==========================================================================
+   SERVICE CARD
+   ========================================================================== */
+
+.service-card {
+  position: relative;
+
+  background-color:
+    var(--color-card);
+
+  border:
+    1px solid rgba(
+      14,
+      165,
+      233,
+      0.15
+    );
+
+  border-radius: 1.25rem;
+
+  padding: 2rem 1.75rem;
+
+  overflow: visible;
+
+  box-shadow:
+    0 10px 30px -10px
+    rgba(0, 0, 0, 0.4);
+
+  transition:
+    border-color 0.35s ease,
+
+    box-shadow 0.35s ease;
+}
+
+
+.service-card-glow {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--color-primary),
+      transparent
+    );
+
+  opacity: 0;
+
+  transition:
+    opacity 0.35s ease;
+}
+
+
+.service-card:hover {
+  border-color:
+    rgba(14, 165, 233, 0.4);
+
+  box-shadow:
+    0 20px 40px -15px
+    rgba(14, 165, 233, 0.15);
+}
+
+
+.service-card:hover
+.service-card-glow {
+  opacity: 1;
+}
+
+
+/* ==========================================================================
+   SERVICE ICON (fixed grid slot)
+   ========================================================================== */
+
+.service-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.85rem;
+  background-color: rgba(14, 165, 233, 0.12);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 2;
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+
+.service-card:hover .service-icon {
+  background-color: rgba(14, 165, 233, 0.2);
+  border-color: rgba(14, 165, 233, 0.35);
+}
+
+
+/* All rotating glyphs share one moving parent to avoid stale positions. */
+.cursor-icons-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  will-change: transform;
+}
+
+.cursor-icons-layer.cursor-layer-visible {
+  opacity: 0.7;
+}
+
+.cursor-floating-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  opacity: 0;
+  filter: drop-shadow(0 0 5px rgba(14, 165, 233, 0.4));
+  transition: opacity 0.3s ease;
+}
+
+.cursor-floating-icon.cursor-icon-active {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   SERVICE TEXT
+   ========================================================================== */
+
+.service-title {
+  font-size: 1.15rem;
+
+  font-weight: 700;
+
+  color: #ffffff;
+
+  margin-bottom: 0.6rem;
+
+  letter-spacing: -0.01em;
+}
+
+
+.service-desc {
+  font-size: 0.875rem;
+
+  color: #9ca3af;
+
+  line-height: 1.65;
+}
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+
+  .services {
+    padding:
+      5rem 3rem;
+  }
+
+  
+
+}
+
+
+@media (max-width: 900px) {
+
+  .services-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .services {
+    padding:
+      4rem 1.25rem;
+  }
+
+  
+
+  .services-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      1.25rem;
+  }
+
+  .service-card {
+    padding:
+      1.5rem;
+  }
+
+}
+
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .service-card {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .service-icon {
+    opacity: 1 !important;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .cursor-icons-layer {
+    display: none;
+  }
+
+}
