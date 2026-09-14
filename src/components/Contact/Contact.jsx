@@ -12,7 +12,7 @@ import {
 import './Contact.css';
 
 // Add your Web3Forms Access Key here
-const WEB3FORMS_ACCESS_KEY = '59a6572c-0ad8-4e15-be9f-6bc2dd7f2484';
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
 export default function Contact() {
   const [form, setForm] = useState({
     name: '',
